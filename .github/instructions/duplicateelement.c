@@ -1,0 +1,28 @@
+//find duplicate element in an array
+#include<stdio.h>
+
+void duplicateelement(int arr[], int n) {
+   for (int i = 0; i < n; i++)
+   {
+    for (int j = i + 1; j < n; j++)
+    {
+        if (arr[i] == arr[j])
+        {
+            printf("Duplicate element is %d\n", arr[i]);
+            return;
+        }
+        else{
+            printf("No duplicate element found\n");
+        }
+    }
+   }
+   
+}
+
+int main() {
+   
+    int arr[] = {6,3,1,5,4,3,2};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    duplicateelement(arr, n);
+    return 0;
+}
