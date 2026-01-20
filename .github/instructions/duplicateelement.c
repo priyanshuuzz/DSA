@@ -1,28 +1,24 @@
-//find duplicate element in an array
-#include<stdio.h>
-
-void duplicateelement(int arr[], int n) {
-   for (int i = 0; i < n; i++)
-   {
-    for (int j = i + 1; j < n; j++)
-    {
-        if (arr[i] == arr[j])
-        {
-            printf("Duplicate element is %d\n", arr[i]);
-            return;
-        }
-        else{
-            printf("No duplicate element found\n");
+//fint intersection of two arrays
+#include <stdio.h>
+void intersection(int arr1[], int n1, int arr2[], int n2) {
+    printf("Intersection elements are: ");
+    for (int i = 0; i < n1; i++) {
+        for (int j = 0; j < n2; j++) {
+            if (arr1[i] == arr2[j]) {
+                printf("%d ", arr1[i]);
+                break; 
+            }
         }
     }
-   }
-   
-}
-
+    printf("\n");
+}   
 int main() {
-   
-    int arr[] = {6,3,1,5,4,3,2};
-    int n=sizeof(arr)/sizeof(arr[0]);
-    duplicateelement(arr, n);
+    int arr1[] = {1, 2, 3, 4, 5};
+    int arr2[] = {4, 5, 6};
+    int n1 = sizeof(arr1) / sizeof(arr1[0]);
+    int n2 = sizeof(arr2) / sizeof(arr2[0]);
+
+    intersection(arr1, n1, arr2, n2);
+
     return 0;
 }
